@@ -1,3 +1,5 @@
+package pruebas;
+
 public class GatoSimple {
 
     String color;
@@ -20,5 +22,13 @@ public class GatoSimple {
             System.out.println("Se dan de zarpazos");
         }else
             System.out.println("No pelean");
+    }
+
+    public GatoSimple(String color, String raza, byte edad, String sexo, float peso) {
+        this.color = color;
+        this.raza = raza;
+        this.edad = edad;
+        this.sexo = sexo;
+        this.peso = peso;
     }
 }
