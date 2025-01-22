@@ -2,10 +2,13 @@ package banco;
 
 public class CuentaCorriente {
 
+
     //atributos
+    static String nombreBanco = "Sabadell";
     private int limiteDescubierto;
     private double saldo;
-    private String nombre, dni;
+    public String nombre;
+    String dni;
 
     //setters
     private void setNombre(String nombre){
@@ -24,7 +27,15 @@ public class CuentaCorriente {
         this.saldo = saldo;
     }
 
+    private static void setNombreBanco(String nombreBanco) {
+        CuentaCorriente.nombreBanco = nombreBanco;
+    }
+
     //getters
+
+    private String getNombreBanco(){
+        return nombreBanco;
+    }
 
     private String getNombre() {
         return nombre;
@@ -43,11 +54,30 @@ public class CuentaCorriente {
     }
 
     //constructores
+    public CuentaCorriente(){
+        setNombre("");
+        setDni("");
+        setLimiteDescubierto(-50);
+    }
+
     public CuentaCorriente(String nombre, String dni){
         setNombre(nombre);
         setDni(dni);
         setSaldo(0);
         setLimiteDescubierto(-50);
+
+    }
+
+    public CuentaCorriente(int limiteDescubierto, double saldo, String dni) {
+        this();
+        setLimiteDescubierto(limiteDescubierto);
+        setSaldo(saldo);
+        setDni(dni);
+    }
+
+    public CuentaCorriente(double saldo){
+        this();
+        setSaldo(saldo);
     }
 
     //metodos
@@ -56,7 +86,7 @@ public class CuentaCorriente {
             System.out.println("Lo sentimos, no puedes pasar el límite de descubierto.\n");
         else{
             setSaldo(getSaldo()-cantidad);
-            System.out.println("Se han sacado " + cantidad + "€\n");
+            System.out.println("Se han sacado " + cantidad + "€ correctamente.\n");
         }
     }
 
@@ -69,5 +99,10 @@ public class CuentaCorriente {
         System.out.println("Titular: " + getNombre());
         System.out.println("Saldo: " + getSaldo());
         System.out.println("Límite de descubierto: " + getLimiteDescubierto() + "\n");
+
+    }
+
+    void cambiarNombreBanco(String nombreBanco){
+        setNombreBanco(nombreBanco);
     }
 }
