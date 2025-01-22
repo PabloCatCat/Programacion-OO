@@ -58,6 +58,7 @@ public class CuentaCorriente {
         setNombre("");
         setDni("");
         setLimiteDescubierto(-50);
+        setSaldo(0);
     }
 
     public CuentaCorriente(String nombre, String dni){
@@ -83,22 +84,22 @@ public class CuentaCorriente {
     //metodos
     public void sacarDinero(double cantidad){
         if ((getSaldo()-cantidad)<getLimiteDescubierto())
-            System.out.println("Lo sentimos, no puedes pasar el límite de descubierto.\n");
+            System.out.println("Lo sentimos, no puedes pasar el límite de descubierto.");
         else{
             setSaldo(getSaldo()-cantidad);
-            System.out.println("Se han sacado " + cantidad + "€ correctamente.\n");
+            System.out.println("Se han sacado " + cantidad + "€ correctamente.");
         }
     }
 
     public void ingresarDinero(double dinero){
         setSaldo(getSaldo()+dinero);
-        System.out.println("Se han ingresado " + dinero + "€ correctamente.\n");
+        System.out.println("Se han ingresado " + dinero + "€ correctamente.");
     }
 
     public void mostrarInformacion(){
         System.out.println("Titular: " + getNombre());
         System.out.println("Saldo: " + getSaldo());
-        System.out.println("Límite de descubierto: " + getLimiteDescubierto() + "\n");
+        System.out.println("Límite de descubierto: " + getLimiteDescubierto());
 
     }
 
