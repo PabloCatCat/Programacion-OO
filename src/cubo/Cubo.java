@@ -1,11 +1,36 @@
 package cubo;
 
+import enumerados.Material;
+
 public class Cubo {
 
     //atributos
     int capacidadMaxima, contenidoLiquido;
-    String color, material;
+    String color;
+    Material material;
     boolean asa;
+
+    //getters
+
+    public int getCapacidadMaxima() {
+        return capacidadMaxima;
+    }
+
+    public int getContenidoLiquido() {
+        return contenidoLiquido;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public Material getMaterial() {
+        return material;
+    }
+
+    public boolean isAsa() {
+        return asa;
+    }
 
     //setters
     public void setColor(String color){
@@ -20,8 +45,8 @@ public class Cubo {
     }
 
     //constructor
-    public Cubo(int capacidadMaxima, String material){
-        this.capacidadMaxima = capacidadMaxima;
+    public Cubo(int capacidadMaxima, Material material){
+        setCapacidadMaxima(capacidadMaxima);
         this.material = material;
         color = "rojo";
         asa = true;

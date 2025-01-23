@@ -97,13 +97,11 @@ public class CuentaCorriente {
     }
 
     public void mostrarInformacion(){
-        System.out.println("Titular: " + getNombre());
-        System.out.println("Saldo: " + getSaldo());
-        System.out.println("Límite de descubierto: " + getLimiteDescubierto());
+        System.out.println("Titular: " + getNombre() + "\nSaldo: " + getSaldo() + "\nLímite de descubierto: " + getLimiteDescubierto() + "\n----------------------\n");
 
     }
 
-    void cambiarNombreBanco(String nombreBanco){
+    public void cambiarNombreBanco(String nombreBanco){
         setNombreBanco(nombreBanco);
     }
 }
