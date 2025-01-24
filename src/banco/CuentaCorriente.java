@@ -4,7 +4,7 @@ public class CuentaCorriente {
 
 
     //atributos
-    static String nombreBanco = "Sabadell";
+    public static String nombreBanco = "Sabadell";
     private int limiteDescubierto;
     private double saldo;
     public String nombre;
@@ -33,7 +33,7 @@ public class CuentaCorriente {
 
     //getters
 
-    private String getNombreBanco(){
+    public static String getNombreBanco(){
         return nombreBanco;
     }
 
@@ -97,7 +97,8 @@ public class CuentaCorriente {
     }
 
     public void mostrarInformacion(){
-        System.out.println("Titular: " + getNombre() + "\nSaldo: " + getSaldo() + "\nLímite de descubierto: " + getLimiteDescubierto() + "\n----------------------\n");
+        System.out.println("Titular: " + getNombre() + "\nSaldo: " + getSaldo() + "\nLímite de descubierto: " +
+                            getLimiteDescubierto() + "\nBanco: " + getNombreBanco() + "\n----------------------\n");
 
     }
 
